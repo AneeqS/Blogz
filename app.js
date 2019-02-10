@@ -26,7 +26,7 @@ var blogSchema = new mongoose.Schema({
     created: {type: Date, default: Date.now()}
 });
 
-var Blog = mongoose.Model("Blog", blogSchema);
+var Blog = mongoose.model("Blog", blogSchema);
 
 
 //RESTful Routes
