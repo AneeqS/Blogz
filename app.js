@@ -16,9 +16,20 @@ app.use(bodyParser.urlencoded({extended: true}));
 app.use(expressSanitizer());
 app.use(methodOverride("_method"));
 
+
+//SCHEMA
+var blogSchema = new mongoose.Schema({
+
+    name: String,
+    image: String,
+    content: String,
+    created: {type: Date, default: Date.now()}
+});
+
 //ROOT(Home) Route
 app.get("/", (req, res) => {
    console.log("Request made for the ROOT Route");
+   console.log(Date.now());
 });
 
 //INDEX ROUTE
