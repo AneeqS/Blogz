@@ -8,7 +8,7 @@ var express = require("express"),
     expressSanitizer = require("express-sanitizer");
 
 //APP CONFIGURATIONS
-mongoose.connect("mongodb://localhost:27017/blog_app");
+mongoose.connect("mongodb://localhost:27017/blog_app", {useNewUrlParser: true});
 app.set("view engine", "ejs");
 app.use(express.static("public"));
 app.use(bodyParser.urlencoded({extended: true}));
