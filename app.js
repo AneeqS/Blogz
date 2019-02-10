@@ -26,6 +26,9 @@ var blogSchema = new mongoose.Schema({
     created: {type: Date, default: Date.now()}
 });
 
+//Model
+var Blog = mongoose.Model("Blog", blogSchema);
+
 //ROOT(Home) Route
 app.get("/", (req, res) => {
    console.log("Request made for the ROOT Route");
