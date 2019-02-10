@@ -1,0 +1,19 @@
+{
+  "name": "blogz",
+  "version": "1.0.0",
+  "description": "blogs app",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/AneeqS/Blogz.git"
+  },
+  "author": "Anneq Shah",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/AneeqS/Blogz/issues"
+  },
+  "homepage": "https://github.com/AneeqS/Blogz#readme"
+}
