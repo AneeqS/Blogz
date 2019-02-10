@@ -17,7 +17,7 @@ app.use(expressSanitizer());
 app.use(methodOverride("_method"));
 
 
-//SCHEMA
+//SCHEMA/Model Config
 var blogSchema = new mongoose.Schema({
 
     name: String,
@@ -26,13 +26,18 @@ var blogSchema = new mongoose.Schema({
     created: {type: Date, default: Date.now()}
 });
 
-//Model
 var Blog = mongoose.Model("Blog", blogSchema);
+
+
+//RESTful Routes
+
 
 //ROOT(Home) Route
 app.get("/", (req, res) => {
+
    console.log("Request made for the ROOT Route");
-   console.log(Date.now());
+   res.render("index");
+
 });
 
 //INDEX ROUTE
