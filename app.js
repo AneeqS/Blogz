@@ -36,13 +36,21 @@ var Blog = mongoose.Model("Blog", blogSchema);
 app.get("/", (req, res) => {
 
    console.log("Request made for the ROOT Route");
-   res.render("index");
+   res.redirect("/blogs");
 
 });
 
 //INDEX ROUTE
 app.get("/blogs", (req, res) => {
-   console.log("Request made for the INDEX Route");
+
+    console.log("Request made for the INDEX Route");
+    Blog.find({}, function (err, blogs){
+       if(err){
+           console.log(err);
+       }else{
+           res.render("index", {blogs: blogs});
+       }
+    });
 });
 
 //NEW Route
