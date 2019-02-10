@@ -5,6 +5,7 @@ var express             = require("express"),
     mongoose            = require("mongoose"),
     methodOverride      = require("method-override"),
     expressSanitizer    = require("express-sanitizer"),
+    port                = 3000,
     app                 = express();
 
 //APP CONFIGURATIONS
@@ -15,3 +16,52 @@ app.use(bodyParser.urlencoded({extended: true}));
 app.use(expressSanitizer());
 app.use(methodOverride("_method"));
 
+//ROOT(Home) Route
+app.get("/", (req, res) => {
+   console.log("Request made for the ROOT Route");
+});
+
+//INDEX ROUTE
+app.get("/blogs", (req, res) => {
+   console.log("Request made for the INDEX Route");
+});
+
+//NEW Route
+app.get("/blogs/new", (req, res) => {
+    console.log("Request made for the NEW Route");
+});
+
+//CREATE Route
+app.post("/blogs", (req, res) => {
+    console.log("Request made for the CREATE Route");
+});
+
+//SHOW Route
+app.get("/blogs/:id", (req, res) => {
+    console.log("Request made for the SHOW Route");
+});
+
+//EDIT Route
+app.get("/blogs/:id/edit", (req, res) => {
+    console.log("Request made for the EDIT Route");
+});
+
+//UPDATE Route
+app.put("/blogs/:id", (req, res) => {
+    console.log("Request made for the UPDATE Route");
+});
+
+/*
+//DESTROY Route
+app.delete("/blogs/:id" (req, res) => {
+    console.log("Request made for the Destroy Route");
+});*/
+
+//ALL OTHER ROUTES
+app.get("*", (req, res) => {
+   res.sendStatus(404);
+});
+
+app.listen(port, () => {
+    console.log("Server Started");
+});
