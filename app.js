@@ -1,11 +1,11 @@
 //Variables
-var express = require("express"),
-    app = express(),
-    bodyParser = require("body-parser"),
-    ejs = require("ejs"),
-    mongoose = require("mongoose"),
-    methodOverride = require("method-override"),
-    expressSanitizer = require("express-sanitizer");
+var express             = require("express"),
+    bodyParser          = require("body-parser"),
+    ejs                 = require("ejs"),
+    mongoose            = require("mongoose"),
+    methodOverride      = require("method-override"),
+    expressSanitizer    = require("express-sanitizer"),
+    app                 = express();
 
 //APP CONFIGURATIONS
 mongoose.connect("mongodb://localhost:27017/blog_app", {useNewUrlParser: true});
@@ -14,3 +14,4 @@ app.use(express.static("public"));
 app.use(bodyParser.urlencoded({extended: true}));
 app.use(expressSanitizer());
 app.use(methodOverride("_method"));
+
