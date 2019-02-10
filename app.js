@@ -56,6 +56,7 @@ app.get("/blogs", (req, res) => {
 //NEW Route
 app.get("/blogs/new", (req, res) => {
     console.log("Request made for the NEW Route");
+    res.render("new");
 });
 
 //CREATE Route
