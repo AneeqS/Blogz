@@ -67,7 +67,6 @@ app.post("/blogs", (req, res) => {
 app.get("/blogs/:id", (req, res) => {
     console.log("Request made for the SHOW Route");
 });
-
 //EDIT Route
 app.get("/blogs/:id/edit", (req, res) => {
     console.log("Request made for the EDIT Route");
