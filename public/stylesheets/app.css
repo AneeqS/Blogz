@@ -2,7 +2,6 @@ body{
    background-color: darkgrey;
 }
 
-
 i.icon{
    font-size: 2em;
 }
@@ -11,3 +10,6 @@ i.icon{
    margin-top: 7.0em;
 }
 
+#delete{
+   display: inline;
+}

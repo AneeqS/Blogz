@@ -11,16 +11,12 @@
             <div class="descriptopn">
                 <p> <%= blog.content %></p>
             </div>
-            <form class="ui form" action="/blogs/<%= blog._id %>?_method=DELETE" method="POST">
-                <div class="field">
+            <a class="ui orange basic big button inverted" href="/blogs/<%= blog._id %>/edit">Edit</a>
+            <form id="delete" action="/blogs/<%= blog._id %>?_method=DELETE" method="POST">
                     <button class="ui red basic big button inverted" type="submit">Delete</button>
-                </div>
             </form>
         </div>
-
     </div>
-
-
 </div>
 
 <% include ./partials/footer %>
