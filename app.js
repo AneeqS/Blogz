@@ -1,5 +1,5 @@
 //Variables
-var express             = require("express"),
+let express             = require("express"),
     bodyParser          = require("body-parser"),
     ejs                 = require("ejs"),
     mongoose            = require("mongoose"),
@@ -18,15 +18,15 @@ app.use(methodOverride("_method"));
 
 
 //SCHEMA/Model Config
-var blogSchema = new mongoose.Schema({
+let blogSchema = new mongoose.Schema({
 
-    name: String,
+    title: String,
     image: String,
     content: String,
     created: {type: Date, default: Date.now()}
 });
 
-var Blog = mongoose.model("Blog", blogSchema);
+let Blog = mongoose.model("Blog", blogSchema);
 
 
 //RESTful Routes
@@ -55,13 +55,23 @@ app.get("/blogs", (req, res) => {
 
 //NEW Route
 app.get("/blogs/new", (req, res) => {
+
     console.log("Request made for the NEW Route");
     res.render("new");
 });
 
 //CREATE Route
 app.post("/blogs", (req, res) => {
+
     console.log("Request made for the CREATE Route");
+    Blog.create(req.body.blog, function (err, newBlog){
+       if(err){
+           console.log(err);
+           res.render("new");
+       }else{
+           res.redirect("/blogs");
+       }
+    });
 });
 
 //SHOW Route
