@@ -64,6 +64,7 @@ app.get("/blogs/new", (req, res) => {
 app.post("/blogs", (req, res) => {
 
     console.log("Request made for the CREATE Route");
+    req.body.blog.body = req.sanitize(req.body.blog.body);
     Blog.create(req.body.blog, function (err, newBlog){
        if(err){
            console.log(err);
@@ -105,6 +106,7 @@ app.get("/blogs/:id/edit", (req, res) => {
 app.put("/blogs/:id", (req, res) => {
 
     console.log("Request made for the UPDATE Route");
+    req.body.blog.body = req.sanitize(req.body.blog.body);
     Blog.findByIdAndUpdate(req.params.id, req.body.blog, function (err, updatedBlog){
         if(err){
             console.log(err);
