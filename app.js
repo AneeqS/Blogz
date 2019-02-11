@@ -105,13 +105,32 @@ app.get("/blogs/:id/edit", (req, res) => {
 app.put("/blogs/:id", (req, res) => {
 
     console.log("Request made for the UPDATE Route");
+    Blog.findByIdAndUpdate(req.params.id, req.body.blog, function (err, updatedBlog){
+        if(err){
+            console.log(err);
+            res.redirect("/blogs");
+        }else{
+            res.redirect("/blogs/" + req.params.id);
+        }
+    });
+
+
 });
 
-/*
+
 //DESTROY Route
-app.delete("/blogs/:id" (req, res) => {
+app.delete("/blogs/:id", (req, res) => {
+
     console.log("Request made for the Destroy Route");
-});*/
+    Blog.findByIdAndRemove(req.params.id,  function (err){
+        if(err){
+            console.log(err);
+            res.redirect("/blogs");
+        }else{
+            res.redirect("/blogs");
+        }
+    });
+});
 
 //ALL OTHER ROUTES
 app.get("*", (req, res) => {

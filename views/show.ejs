@@ -11,6 +11,11 @@
             <div class="descriptopn">
                 <p> <%= blog.content %></p>
             </div>
+            <form class="ui form" action="/blogs/<%= blog._id %>?_method=DELETE" method="POST">
+                <div class="field">
+                    <button class="ui red basic big button inverted" type="submit">Delete</button>
+                </div>
+            </form>
         </div>
 
     </div>
