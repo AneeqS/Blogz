@@ -89,11 +89,15 @@ app.get("/blogs/:id", (req, res) => {
 });
 //EDIT Route
 app.get("/blogs/:id/edit", (req, res) => {
+
     console.log("Request made for the EDIT Route");
+    res.render("edit");
+
 });
 
 //UPDATE Route
 app.put("/blogs/:id", (req, res) => {
+
     console.log("Request made for the UPDATE Route");
 });
 
