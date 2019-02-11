@@ -5,7 +5,7 @@
     <form class="ui form" action="/blogs" method="POST">
         <div class="field">
             <label class="ui violet label">Title</label>
-            <input type="text" name="blog[title]">
+            <input type="text" name="blog[title]" required>
         </div>
         <div class="field">
             <label class="ui purple label">Image</label>
@@ -13,7 +13,7 @@
         </div>
         <div class="field">
             <label class="ui violet label">Blog Content</label>
-            <textarea name="blog[content]"></textarea>
+            <textarea name="blog[content]" required></textarea>
         </div>
         <div class="field">
             <button class="ui purple basic big button inverted" type="submit">Submit</button>
