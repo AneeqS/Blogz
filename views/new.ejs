@@ -4,18 +4,19 @@
     <div class="ui huge header">New Blog</div>
     <form class="ui form" action="/blogs" method="POST">
         <div class="field">
-            <input type="text" name="blog[title]" placeholder="title">
+            <label class="ui violet label">Title</label>
+            <input type="text" name="blog[title]">
         </div>
         <div class="field">
-            <input type="text" name="blog[image]" placeholder="image url">
+            <label class="ui purple label">Image</label>
+            <input type="text" name="blog[image]">
         </div>
         <div class="field">
-            <!--<input type="text" name="blog[content]" placeholder="blog content">-->
-            <textarea name="blog[content]" placeholder="blog content"></textarea>
+            <label class="ui violet label">Blog Content</label>
+            <textarea name="blog[content]"></textarea>
         </div>
         <div class="field">
-            <!--<input type="submit">-->
-            <button class="ui black basic button inverted" type="submit">Submit</button>
+            <button class="ui purple basic big button inverted" type="submit">Submit</button>
         </div>
     </form>
 </div>
