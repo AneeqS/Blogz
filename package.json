@@ -15,7 +15,7 @@
   "bugs": {
     "url": "https://github.com/AneeqS/Blogz/issues"
   },
-  "homepage": "https://github.com/AneeqS/Blogz#readme",
+  "homepage": "https://localhost:3000",
   "dependencies": {
     "body-parser": "^1.18.3",
     "ejs": "^2.6.1",
