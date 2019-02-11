@@ -91,8 +91,14 @@ app.get("/blogs/:id", (req, res) => {
 app.get("/blogs/:id/edit", (req, res) => {
 
     console.log("Request made for the EDIT Route");
-    res.render("edit");
-
+    Blog.findById(req.params.id, function (err, foundBlog){
+        if(err){
+            console.log(err);
+            res.redirect("/blogs");
+        }else{
+            res.render("edit", {blog: foundBlog});
+        }
+    });
 });
 
 //UPDATE Route
