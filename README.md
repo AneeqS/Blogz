@@ -1,5 +1,5 @@
 # Blogz
-##Blogs Web Application
+### Blogs Web Application
 
 * Tech Stack
     * JavaScript (Node.js)
